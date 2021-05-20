@@ -1,0 +1,21 @@
+<header class="banner">
+  <div class="summary">
+    <div class="feel">
+      <div class="location">
+        <h2>{{ location }}</h2>
+        <p>{{ time | date: "medium" }}</p>
+      </div>
+      <div class="temperature">{{ temperature | number: "1.0-0" }}&#176;</div>
+      <div class="feel">{{ feel | number: "1.0-0" }}&#176;(Feel)</div>
+    </div>
+    <div class="atmosphere">
+      <div class="atmosphere_icon">
+        <img
+          src="{{ 'http://openweathermap.org/img/wn/' + icon + '@2x.png' }}"
+          alt="{{ description + ' icon' }}"
+        />
+      </div>
+      <div class="atmosphere_desc">{{ description }}</div>
+    </div>
+  </div>
+</header>

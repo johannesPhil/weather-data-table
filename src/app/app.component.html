@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <app-header
+    [longitude]="longitude"
+    [latitude]="latitude"
+    [location]="timezone"
+    [description]="description"
+    [temperature]="temperature"
+    [feel]="feel"
+    [icon]="icon"
+  ></app-header>
+  <app-hourly [hourly]="hourly"></app-hourly>
+  <app-daily [daily]="daily"></app-daily>
+</div>

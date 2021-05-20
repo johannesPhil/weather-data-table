@@ -1,0 +1,62 @@
+<div>
+  <div class="title">
+    <h2>Daily Temperature/Weather</h2>
+    <p (click)="toggleVisibility()" *ngIf="!isVisible" class="toggle">
+      &#x2304;
+    </p>
+    <p (click)="toggleVisibility()" *ngIf="isVisible" class="toggle">
+      &#x2303;
+    </p>
+  </div>
+  <div *ngIf="isVisible">
+    <div class="heading">
+      <div class="day-heading"><h4>Day</h4></div>
+      <div class="temperature-heading"><h4>Day(&#176;)</h4></div>
+      <div class="wind-heading"><h4>Eve(&#176;)</h4></div>
+      <div class="weather-heading"><h4>Night(&#176;)</h4></div>
+      <div class="rain-heading"><h4>Weather</h4></div>
+    </div>
+    <div class="day-row" *ngFor="let day of daily">
+      <div class="day-time">
+        {{ day.date | date: "EEEE" }}
+      </div>
+      <div class="day">
+        <div class="actual-temp">
+          {{ day.temp.day | number: "1.0-0" }}&#176;
+        </div>
+        <div class="feel-temp">
+          {{ day.feels_like.day | number: "1.0-0" }}&#176;(Feel)
+        </div>
+      </div>
+      <div class="evening">
+        <div class="actual-temp">
+          {{ day.temp.eve | number: "1.0-0" }}&#176;
+        </div>
+        <div class="feel-temp">
+          {{ day.feels_like.eve | number: "1.0-0" }}&#176;
+        </div>
+      </div>
+      <div class="night">
+        <div class="actual-temp">
+          {{ day.temp.night | number: "1.0-0" }}&#176;
+        </div>
+        <div class="feel-temp">
+          {{ day.feels_like.night | number: "1.0-0" }}&#176;
+        </div>
+      </div>
+      <div class="weather">
+        <div class="weather-icon">
+          <img
+            src="{{
+              'http://openweathermap.org/img/wn/' +
+                day.weather[0].icon +
+                '@2x.png'
+            }}"
+            alt="{{ day.weather[0].description + ' icon' }}"
+          />
+        </div>
+        <div class="weather-desc">{{ day.weather[0].description }}</div>
+      </div>
+    </div>
+  </div>
+</div>

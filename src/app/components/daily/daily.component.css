@@ -1,0 +1,55 @@
+.title {
+  margin: auto;
+  text-align: center;
+  color: rgb(100, 100, 100);
+}
+
+.day-row,
+.heading {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  border-bottom: solid 1px rgb(214, 214, 214);
+  color: rgb(100, 100, 100);
+}
+
+.toggle {
+  width: min-content;
+  margin: auto;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.day-row {
+  color: rgb(100, 100, 100);
+}
+
+.day-time {
+  font-size: 1rem;
+  justify-self: start;
+}
+
+.actual-temp {
+  font-size: 2rem;
+  /* color: rgb(100, 100, 100); */
+}
+
+.feel-temp {
+  font-size: 1rem;
+  color: rgba(133, 133, 133, 0.932);
+}
+
+.weather {
+  text-transform: capitalize;
+}
+
+.weather img {
+  width: 80%;
+  height: 80%;
+  margin: auto 10%;
+  filter: invert(0.2);
+  -webkit-filter: invert(0.2);
+}

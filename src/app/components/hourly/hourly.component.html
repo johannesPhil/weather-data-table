@@ -1,0 +1,53 @@
+<div>
+  <div class="title">
+    <h2>Hourly Forecast</h2>
+    <p (click)="toggleVisibility()" *ngIf="!isVisible" class="toggle">
+      &#x2304;
+    </p>
+    <p (click)="toggleVisibility()" *ngIf="isVisible" class="toggle">
+      &#x2303;
+    </p>
+  </div>
+  <div *ngIf="isVisible">
+    <div class="heading">
+      <div class="hour-heading"><h4>Time</h4></div>
+      <div class="temperature-heading"><h4>Temp.</h4></div>
+      <div class="wind-heading"><h4>Wind</h4></div>
+      <div class="weather-heading"><h4>Weather</h4></div>
+      <div class="rain-heading"><h4>Rain</h4></div>
+    </div>
+    <div class="hour-row" *ngFor="let hour of hourly">
+      <div class="hour">
+        {{ hour.unix | date: "hh a" }}
+      </div>
+      <div class="temperature">
+        <div class="actual-temp">{{ hour.temp | number: "1.0-0" }}&#176;</div>
+        <div class="feel-temp">
+          {{ hour.feels_like | number: "1.0-0" }}&#176;(Feel)
+        </div>
+      </div>
+      <div class="wind">
+        <div class="wind-direction">{{ hour.wind_deg }}&#176;</div>
+        <div class="wind-speed">
+          {{ hour.wind_speed | number: "1.0-0" }} m/s
+        </div>
+      </div>
+      <div class="weather">
+        <div class="weather-icon">
+          <img
+            src="{{
+              'http://openweathermap.org/img/wn/' +
+                hour.weather[0].icon +
+                '@2x.png'
+            }}"
+            alt="{{ hour.weather[0].description + ' icon' }}"
+          />
+        </div>
+        <div class="weather-desc">
+          {{ hour.weather[0].description }}
+        </div>
+      </div>
+      <div class="rain">{{ hour.pop * 100 | number: "1.0-0" }}%</div>
+    </div>
+  </div>
+</div>
