@@ -8,11 +8,12 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { HourlyComponent } from "./components/hourly/hourly.component";
 import { DailyComponent } from "./components/daily/daily.component";
+import { IndexComponent } from "./components/index/index.component";
 
 const appRoutes: Routes = [
   {
     path: "",
-    component: AppComponent,
+    component: IndexComponent,
   },
 ];
 
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     HourlyComponent,
     DailyComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
