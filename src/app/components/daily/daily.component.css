@@ -34,7 +34,7 @@
 }
 
 .actual-temp {
-  font-size: 2rem;
+  font-size: 1.2rem;
   /* color: rgb(100, 100, 100); */
 }
 
@@ -47,10 +47,10 @@
   text-transform: capitalize;
 }
 
-.weather img {
-  width: 80%;
-  height: 80%;
-  margin: auto 10%;
+img {
+  width: 100%;
+  height: 100%;
+  margin: auto;
   filter: invert(0.2);
   -webkit-filter: invert(0.2);
 }
